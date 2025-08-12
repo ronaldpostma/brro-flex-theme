@@ -1,3 +1,10 @@
+<?php
+/**
+ * The header template
+ *
+ * @package Brro_Flex_Theme
+ */
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -8,11 +15,17 @@
 <body <?php body_class(); ?>>
 <header>
     <?php
-    // Primary navigation menu
-    wp_nav_menu([
-        'theme_location' => 'primary',
-        'container'      => false
-    ]);
+    // Load custom header content if it exists
+    $custom_header = get_template_directory() . '/templates/header.php';
+    if (file_exists($custom_header)) {
+        include $custom_header;
+    } else {
+        // Default header content
+        wp_nav_menu([
+            'theme_location' => 'primary',
+            'container'      => false
+        ]);
+    }
     ?>
 </header>
 <main>
