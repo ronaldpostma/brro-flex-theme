@@ -15,12 +15,12 @@
 <body <?php body_class(); ?>>
 <header>
     <?php
-    // Load custom header content if it exists
-    $custom_header = get_template_directory() . '/templates/header.php';
-    if (file_exists($custom_header)) {
-        include $custom_header;
+    // Load main header content if it exists
+    $main_header = get_template_directory() . '/templates/main-header.php';
+    if (file_exists($main_header)) {
+        include $main_header;
     } else {
-        // Default header content
+        // Default header content (fallback)
         wp_nav_menu([
             'theme_location' => 'primary',
             'container'      => false

@@ -8,12 +8,12 @@
 </main>
 <footer>
     <?php
-    // Load custom footer content if it exists
-    $custom_footer = get_template_directory() . '/templates/footer.php';
-    if (file_exists($custom_footer)) {
-        include $custom_footer;
+    // Load main footer content if it exists
+    $main_footer = get_template_directory() . '/templates/main-footer.php';
+    if (file_exists($main_footer)) {
+        include $main_footer;
     } else {
-        // Default footer content
+        // Default footer content (fallback)
         ?>
         <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
         <?php
