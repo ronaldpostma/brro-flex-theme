@@ -5,3 +5,9 @@ Description: Minimal flexbox-friendly starter theme with assets + templates
 Version: 1.0
 Text Domain: brro-flex-theme
 */
+:root {
+    --max-mobile: 767px;
+    --min-tablet: 768px;
+    --max-tablet: 1179px;
+    --min-desktop: 1180px;
+}
