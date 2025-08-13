@@ -13,6 +13,10 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+    <?php
+    // Outputs the wp_body_open action hook so plugins/analytics can inject code right after the opening body tag
+    wp_body_open();
+    ?>
 <header>
     <?php
     // Load main header content if it exists

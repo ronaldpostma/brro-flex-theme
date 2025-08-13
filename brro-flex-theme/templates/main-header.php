@@ -21,3 +21,4 @@
  * @package Brro_Flex_Theme
  */
 ?>
+<div class="brro-dev-note">ready for development</div>

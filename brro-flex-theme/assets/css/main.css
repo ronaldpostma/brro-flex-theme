@@ -121,7 +121,7 @@
    ======================================== */
 
 
-@media (max-width: var(--max-tablet)) {
+@media (max-width: 1179px) {
     .tab\:flex { display: flex; gap: 0; }
     .tab\:flex-inline { display: inline-flex; gap: 0; }
     .tab\:col-nowrap { flex-flow: column nowrap; }
@@ -183,7 +183,7 @@
     .tab\:order-20 { order: 20; }
 }
 
-@media (max-width: var(--max-mobile)) {
+@media (max-width: 767px) {
     .mob\:flex { display: flex; gap: 0; }
     .mob\:flex-inline { display: inline-flex; gap: 0; }
     .mob\:col-nowrap { flex-flow: column nowrap; }
