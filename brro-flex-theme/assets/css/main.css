@@ -5,6 +5,64 @@
  */
 
 /* ========================================
+   GLOBAL STYLES
+   ======================================== */
+:root {
+   --content-max-desk: 1440px;
+   --content-max-tab: 1179px;
+   --content-max-mob: 767px;
+   --gutter-desktop: 24px;
+   --gutter-tablet: 20px;
+   --gutter-mobile: 16px;
+}
+
+.outer-flex-wrapper { width: 100%; } /* full-bleed background lives here */
+
+.inner-flex-wrapper {
+   box-sizing: border-box;
+   width: 100%;
+   max-width: var(--content-max-desk);
+   margin-inline: auto;
+   padding-left: var(--gutter-desktop);
+   padding-right: var(--gutter-desktop);
+}
+
+@media (max-width: 1179px) {
+   .inner-flex-wrapper {
+      max-width: var(--content-max-tab);
+      padding-left: var(--gutter-tablet);
+      padding-right: var(--gutter-tablet);
+   }
+}
+@media (max-width: 767px) {
+   .inner-flex-wrapper {
+      max-width: var(--content-max-mob);
+      padding-left: var(--gutter-mobile);
+      padding-right: var(--gutter-mobile);
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================
    FLEX CONTAINER CLASSES
    ======================================== */
 
