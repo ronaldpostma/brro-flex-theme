@@ -128,8 +128,8 @@ remove_action('wp_head', 'wp_oembed_add_host_js'); // Remove oEmbed-specific Jav
  * Include theme function files
  */
 // Include global functions
-require_once get_template_directory() . '/inc/brro-global-functions.php';
+require_once get_template_directory() . '/inc/global-functions.php';
 // Include search functions
-require_once get_template_directory() . '/inc/brro-search-functions.php';
+require_once get_template_directory() . '/inc/search-functions.php';
 // Include homepage functions
-require_once get_template_directory() . '/inc/brro-homepage-functions.php';
+require_once get_template_directory() . '/inc/homepage-functions.php';
