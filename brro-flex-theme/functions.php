@@ -95,3 +95,5 @@ remove_action('wp_head', 'wp_resource_hints', 2); // Remove resource hints for D
 remove_action('wp_head', 'rest_output_link_wp_head'); // Remove REST API link tag
 remove_action('wp_head', 'wp_oembed_add_discovery_links'); // Remove oEmbed discovery links
 remove_action('wp_head', 'wp_oembed_add_host_js'); // Remove oEmbed-specific JavaScript
+/*
+*/
