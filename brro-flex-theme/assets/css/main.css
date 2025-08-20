@@ -8,33 +8,21 @@
    GLOBAL STYLES
    ======================================== */
 :root {
-   --content-max-desk: 1440px;
-   --content-max-tab: 1179px;
-   --content-max-mob: 767px;
-   --gutter-desktop: 24px;
-   --gutter-tablet: 20px;
-   --gutter-mobile: 16px;
-}
-
-/*********/
-/*************************************************************************************************************************************/
-/*********/
-/* ROOT */
-:root,
-.elementor-kit-XX {
+    --content-max-desk: 1440px;
+    --content-max-tab: 1179px;
+    --content-max-mob: 767px;
+    --gutter-desktop: 24px;
+    --gutter-tablet: 20px;
+    --gutter-mobile: 16px;
     --primary: var(--e-global-color-primary);
     --secondary: var(--e-global-color-secondary);
     --text: var(--e-global-color-text);
     --accent: var(--e-global-color-accent);
-	--cubix: cubic-bezier(.8,0,.4,1);
-    --cubixslow: cubic-bezier(.55,0,0,1);
-}
-@media (max-width:767px) {
-	.e-con {
-		--def:clamp(300px, calc(24.57vw + 231.55px), 420px);/*320px @ 360 : 420px @ 767*/
-		--small:clamp(290px, calc(19.66vw + 209.24px), 360px); /*280px @ 360 : 360px @ 767*/
-		--wide:clamp(300px, calc(63.88vw + 90.02px), 580px); /*320px @ 360 : 580px @ 767*/
-	}
+    --cubix: cubic-bezier(.8, 0, .4, 1);
+    --cubixslow: cubic-bezier(.55, 0, 0, 1);
+    --def: clamp(300px, calc(24.57vw + 231.55px), 420px); /*320px @ 360 : 420px @ 767*/
+    --small: clamp(290px, calc(19.66vw + 209.24px), 360px); /*280px @ 360 : 360px @ 767*/
+    --wide: clamp(300px, calc(63.88vw + 90.02px), 580px); /*320px @ 360 : 580px @ 767*/
 }
 /* WP ADMIN BAR */
 /* Hide all */
@@ -66,7 +54,8 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
     filter: grayscale(100%) invert(1) brightness(200%);
 }
-#REMOVE-IF-NOT-USED body::before {
+/* REMOVE-IF-NOT-USED */
+body::before {
   	content:"";position:fixed;top:0;left:0;width:100%;height:100%;z-index: -1;
   	background: url('/wp-content/uploads/background-image.png') repeat-y center center;
   	background-size: 100% auto;
@@ -76,27 +65,6 @@ input[type="search"]::-webkit-search-results-decoration {
 /* Hide content if it has no data, from ACF shortcode function brro_data */
 [brro_data="no-content"] {
 	display:none!important;
-}
-/* SCROLLBARS */
-/* This styles the scrollbar track (part the thumb slides within) */
-html::-webkit-scrollbar-track {
-    background-color: blue!important;
-}
-/* This styles the scrollbar thumb (the part that you drag) */
-html::-webkit-scrollbar-thumb {
-    background-color: green!important; 
-    border-radius: 10px!important; 
-    border: 2px solid red!important; 
-}
-/* This styles the scrollbar itself (including thumb and track) */
-html::-webkit-scrollbar {
-    width: 12px!important; 
-    height: 20px!important; /* Height of the scrollbar for horizontal scroll */
-}
-/* Firefox requires a different approach */
-html {
-    scrollbar-width: thin!important; /* 'auto' or 'thin' */
-    scrollbar-color: green blue; /* thumb and track color */
 }
 
 /* Hide elements bases on class or screensize */
@@ -279,25 +247,12 @@ header .elementor-shortcode {
 /*********/
 /*************************************************************************************************************************************/
 /*********/
-/* SECTIONS/CONTAINERS */
-/*
- * 
-
-/*********/
-/*************************************************************************************************************************************/
-/*********/
-/* Loops */
-
-/*********/
-/*************************************************************************************************************************************/
-/*********/
 /* TEXT STYLES */
-/* Active navigation links
-
+/* Active navigation links */
 a.current-page-open {
-    
+    color:red!important;
 }
-*/
+
 
 
 /* Offscreen post title */
