@@ -95,46 +95,46 @@ body::before {
    RESPONSIVE DISPLAY UTILITIES
    ======================================== */
 
-/* Base state: hidden by default */
+/* Base state: hidden by default - higher specificity to override flex classes */
 .only {
-    display: none;
+    display: none !important;
 }
 
 /* Show on single post pages */
 .only.single-post {
-    display: initial;
+    display: revert !important;
 }
 
 /* Desktop only (1180px and up) */
 @media (min-width: 1180px) {
     .only.desk {
-        display: initial;
+        display: revert !important;
     }
     .only.mob:not(.desk),
     .only.tab:not(.desk) {
-        display: none;
+        display: none !important;
     }
 }
 
 /* Tablet only (768px to 1179px) */
 @media (min-width: 768px) and (max-width: 1179px) {
     .only.tab {
-        display: initial;
+        display: revert !important;
     }
     .only.mob:not(.tab),
     .only.desk:not(.tab) {
-        display: none;
+        display: none !important;
     }
 }
 
 /* Mobile only (767px and down) */
 @media (max-width: 767px) {
     .only.mob {
-        display: initial;
+        display: revert !important;
     }
     .only.desk:not(.mob),
     .only.tab:not(.mob) {
-        display: none;
+        display: none !important;
     }
 }
 
