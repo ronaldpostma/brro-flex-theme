@@ -10,21 +10,21 @@
 
 /* CSS Custom Properties (CSS Variables) */
 :root {
-    --content-max-desk: 1440px;
-    --content-max-tab: 1179px;
-    --content-max-mob: 767px;
-    --gutter-desktop: 24px;
-    --gutter-tablet: 20px;
+    --max-w-desk: 1440px; /* Maximum content width on desktop */
+    --max-w-tab: 1179px;  /* Maximum content width on tablet */
+    --max-w-mob: 767px;   /* Maximum content width on mobile */
+    --max-w-mob-def: clamp(300px, calc(24.57vw + 231.55px), 420px); /* 320px @ 360 : 420px @ 767 */
+    --max-w-mob-small: clamp(290px, calc(19.66vw + 209.24px), 360px); /* 280px @ 360 : 360px @ 767 */
+    --max-w-mob-wide: clamp(300px, calc(63.88vw + 90.02px), 580px); /* 320px @ 360 : 580px @ 767 */
+    --gutter-desktop: clamp(20px, 1.67vw, 32px); /* 24px @ 1440 */
+    --gutter-tablet: clamp(16px, calc(0.97vw + 8.53px), 20px) /*16px @ 768 : 20px @ 1179*/
     --gutter-mobile: 16px;
-    --primary: red;
-    --secondary: blue;
-    --text: black;
-    --accent: yellow;
+    --red: #FF0000;
+    --blue: #0000FF;
+    --black: #000000;
+    --yellow: #FFFF00;
     --cubix: cubic-bezier(.8, 0, .4, 1);
     --cubixslow: cubic-bezier(.55, 0, 0, 1);
-    --def: clamp(300px, calc(24.57vw + 231.55px), 420px); /* 320px @ 360px : 420px @ 767px */
-    --small: clamp(290px, calc(19.66vw + 209.24px), 360px); /* 280px @ 360px : 360px @ 767px */
-    --wide: clamp(300px, calc(63.88vw + 90.02px), 580px); /* 320px @ 360px : 580px @ 767px */
 }
 
 /* ========================================
@@ -271,7 +271,7 @@ a.current-page-open {
    FLEX CONTAINER WRAPPERS
    ======================================== */
 
-.outer-flex-wrapper { width: 100%; } /* full-bleed background lives here */
+.outer-flex-wrapper { width: 100%; } /* full-bleed background */
 
 .inner-flex-wrapper {
    box-sizing: border-box;
