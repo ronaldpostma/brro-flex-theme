@@ -133,3 +133,10 @@ require_once get_template_directory() . '/inc/global-functions.php';
 require_once get_template_directory() . '/inc/search-functions.php';
 // Include homepage functions
 require_once get_template_directory() . '/inc/homepage-functions.php';
+
+/**
+ * Admin-specific functionality (only load in admin)
+ */
+if (is_admin()) {
+    require_once get_template_directory() . '/inc/admin/admin-functions.php';
+}
