@@ -145,5 +145,5 @@ require_once get_template_directory() . '/inc/homepage-functions.php';
  * Admin-specific functionality (only load in admin)
  */
 if (is_admin() && !brro_project_active()) {
-    require_once get_template_directory() . '/inc/admin/admin-functions.php';
+    require_once get_template_directory() . '/inc/admin/wp-admin-brro-ux.php';
 }
