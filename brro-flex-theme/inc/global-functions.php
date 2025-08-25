@@ -10,7 +10,7 @@
 //    	- Add additional body classes if needed
 //
 // Translate string
-//add_filter( 'gettext', 'brro_translate_strings', 20, 3 );*****************************disabled
+//add_filter( 'gettext', 'brro_translate_strings', 20, 3 );
 function brro_translate_strings( $translated_text, $text, $domain ) {
 	// Regardless of plugins
 	$translated_text = str_ireplace( 'This field is required.',  'Niet of verkeerd ingevuld.',  $translated_text );
@@ -23,7 +23,7 @@ function brro_translate_strings( $translated_text, $text, $domain ) {
 }
 //
 // Additional body classes
-//add_filter( 'body_class', 'brro_additional_wp_css_body_class' );*****************************disabled
+//add_filter( 'body_class', 'brro_additional_wp_css_body_class' );
 function brro_additional_wp_css_body_class( $classes ){
 	// 'guest', 'webeditor', 'webadmin', 'parent', 'child', 'featuredimg-set' already added
 	if ( is_page() ) {
@@ -31,6 +31,3 @@ function brro_additional_wp_css_body_class( $classes ){
 	}
 	return $classes;
 }
-//
-// ******************************************************************************************************************************************************************** Example functions and templates
-//
