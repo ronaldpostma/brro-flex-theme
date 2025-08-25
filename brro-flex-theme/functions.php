@@ -48,6 +48,13 @@ function brro_flex_theme_setup() {
     ]);
 }
 
+/**
+ * Brro Project Plugin Detection
+ * Safe wrapper function to check if brro-project plugin is active
+ */
+function brro_project_active() {
+    return function_exists('brro_is_project_active') ? brro_is_project_active() : false;
+}
 
 /**
  * Enqueue Styles & Scripts
@@ -137,6 +144,6 @@ require_once get_template_directory() . '/inc/homepage-functions.php';
 /**
  * Admin-specific functionality (only load in admin)
  */
-if (is_admin()) {
+if (is_admin() && !brro_project_active()) {
     require_once get_template_directory() . '/inc/admin/admin-functions.php';
 }
