@@ -17,20 +17,22 @@ if (!defined('ABSPATH')) {
    ADD INLINE ADMIN STYLES AND SCRIPTS
    ======================================== */
 
-add_action('admin_head', 'brro_admin_head_inline_assets');   
-function brro_admin_head_inline_assets() {
-    echo brro_get_admin_jquery();
-    echo brro_get_admin_css_for_all_users();
-    $user = get_current_user_id();
-    $get_editors = get_option('brro_editors', '2,3,4,5');
-    $editors = array_filter(array_map('intval', explode(',', $get_editors)), function($id) {
-        return $id > 0;
-    }); 
-    if (in_array($user, $editors)) {
-        echo brro_get_admin_css_for_editors();
-    }
+add_action('admin_head', 'brro_admin_inline_styles');   
+function brro_admin_inline_styles() {
+	echo brro_get_admin_css_for_all_users();
+	$user = get_current_user_id();
+	$get_editors = get_option('brro_editors', '2,3,4,5');
+	$editors = array_filter(array_map('intval', explode(',', $get_editors)), function($id) {
+		return $id > 0;
+	}); 
+	if (in_array($user, $editors)) {
+		echo brro_get_admin_css_for_editors();
+	}
 }
-
+add_action('admin_print_footer_scripts', 'brro_admin_inline_scripts');
+function brro_admin_inline_scripts() {
+	echo brro_get_admin_jquery();
+}
 
 
 /* ========================================
