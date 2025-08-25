@@ -17,22 +17,17 @@ if (!defined('ABSPATH')) {
    ADD INLINE ADMIN STYLES AND SCRIPTS
    ======================================== */
 
-add_action('admin_enqueue_scripts', 'brro_admin_scripts_styles');   
-function brro_admin_scripts_styles() {
-    // Add inline script
-    wp_add_inline_script('jquery', brro_get_admin_jquery());
-    
-    // Add inline styles
-    wp_add_inline_style('wp-admin', brro_get_admin_css_for_all_users());
-    
+add_action('admin_head', 'brro_admin_head_inline_assets');   
+function brro_admin_head_inline_assets() {
+    echo brro_get_admin_jquery();
+    echo brro_get_admin_css_for_all_users();
     $user = get_current_user_id();
     $get_editors = get_option('brro_editors', '2,3,4,5');
     $editors = array_filter(array_map('intval', explode(',', $get_editors)), function($id) {
         return $id > 0;
     }); 
-    // Client users / editors
     if (in_array($user, $editors)) {
-        wp_add_inline_style('wp-admin', brro_get_admin_css_for_editors());
+        echo brro_get_admin_css_for_editors();
     }
 }
 
