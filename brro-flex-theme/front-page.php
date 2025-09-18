@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-
+<div>This is the content for the front-page, wrapped in 'main' tag</div>
 
 
 <?php get_footer(); ?>
