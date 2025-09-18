@@ -25,11 +25,11 @@ jQuery(function($) {
     // Example usage to check if item is viewport.
     function brro_check_if_in_viewport() {
         var viewport = brro_calc_viewport();
-        var exampleDiv = $('#thisdiv');
-        if (exampleDiv.length && thisDiv.brroViewport(viewport.top, viewport.bottom)) {
-            console.log('#thisdiv is in the viewport');
+        var exampleDiv = $('#exampleDiv');
+        if (exampleDiv.length && exampleDiv.brroViewport(viewport.top, viewport.bottom)) {
+            console.log('#exampleDiv is in the viewport');
         } else {
-            console.log('#thisdiv is not in the viewport');
+            console.log('#exampleDiv is not in the viewport');
         }
     }
     // Also add to scroll function brro_run_on_scroll()
