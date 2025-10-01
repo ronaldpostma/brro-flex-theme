@@ -5,251 +5,6 @@
  */
 
 /* ========================================
-   GLOBAL STYLES
-   ======================================== */
-
-/* CSS Custom Properties (CSS Variables) */
-:root {
-    --max-w-desk: 1440px; /* Maximum content width on desktop */
-    --max-w-tab: 1179px;  /* Maximum content width on tablet */
-    --max-w-mob: 767px;   /* Maximum content width on mobile */
-    --max-w-mob-def: clamp(300px, calc(24.57vw + 231.55px), 420px); /* 320px @ 360 : 420px @ 767 */
-    --max-w-mob-small: clamp(290px, calc(19.66vw + 209.24px), 360px); /* 280px @ 360 : 360px @ 767 */
-    --max-w-mob-wide: clamp(300px, calc(63.88vw + 90.02px), 580px); /* 320px @ 360 : 580px @ 767 */
-    --gutter-desktop: clamp(20px, 1.67vw, 32px); /* 24px @ 1440 */
-    --gutter-tablet: clamp(16px, calc(0.97vw + 8.53px), 20px) /*16px @ 768 : 20px @ 1179*/
-    --gutter-mobile: 16px;
-    --red: #FF0000;
-    --blue: #0000FF;
-    --black: #000000;
-    --yellow: #FFFF00;
-    --cubix: cubic-bezier(.8, 0, .4, 1);
-    --cubixslow: cubic-bezier(.55, 0, 0, 1);
-}
-
-/* ========================================
-   WORDPRESS ADMIN BAR
-   ======================================== */
-
-/* Hide all admin bar items by default */
-body:not(.webadmin) #wpadminbar li:not(#wp-admin-bar-site-name, #wp-admin-bar-my-account, #wp-admin-bar-logout) {
-    display: none !important;
-}
-
-/* ========================================
-   HTML & BODY STYLES
-   ======================================== */
-
-/* Prevent horizontal scrolling */
-body,
-html {
-    overflow-x: hidden !important;
-}
-
-/* Ensure body has relative positioning for absolute positioned children */
-body {
-    position: relative;
-}
-
-/* ========================================
-   FORM ELEMENTS
-   ======================================== */
-
-/* Remove default search input styling in Chrome */
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
-    filter: grayscale(100%) invert(1) brightness(200%);
-}
-
-/* ========================================
-   BACKGROUND IMAGE
-   ======================================== */
-
-/* REMOVE-IF-NOT-USED: Background image overlay */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: url('/wp-content/uploads/background-image.png') repeat-y center center;
-    background-size: 100% auto;
-    mix-blend-mode: multiply;
-    opacity: .8;
-}
-
-/* ========================================
-   CONTENT VISIBILITY
-   ======================================== */
-
-/* Hide content when ACF shortcode function brro_data returns no content */
-[brro_data="no-content"] {
-    display: none !important;
-}
-
-/* ========================================
-   RESPONSIVE DISPLAY UTILITIES
-   ======================================== */
-
-/* Desktop only (1180px and up) */
-@media (min-width: 1180px) {
-    .only.desk {
-        display: revert !important;
-    }
-    .only.mob:not(.desk),
-    .only.tab:not(.desk) {
-        display: none !important;
-    }
-}
-
-/* Tablet only (768px to 1179px) */
-@media (min-width: 768px) and (max-width: 1179px) {
-    .only.tab {
-        display: revert !important;
-    }
-    .only.mob:not(.tab),
-    .only.desk:not(.tab) {
-        display: none !important;
-    }
-}
-
-/* Mobile only (767px and down) */
-@media (max-width: 767px) {
-    .only.mob {
-        display: revert !important;
-    }
-    .only.desk:not(.mob),
-    .only.tab:not(.mob) {
-        display: none !important;
-    }
-}
-
-/* ========================================
-   STICKY HEADER 
-   ======================================== */
-
-/* Sticky header transition effects */
-/* Fixed positioning for sticky header */
-header.brro-sticky {
-    position: fixed;
-}
-
-header.brro-sticky,
-header.brro-sticky .sticky-show {
-    -webkit-transition: transform 400ms var(--cubix) !important;
-    transition: transform 400ms var(--cubix) !important;
-}
-
-/* 
- * STICKY HEADER ANIMATION OPTIONS
- * 
- * Option 1: If entire sticky header goes up and down
- * 
- * header.brro-headerup {
- *     transform: translateY(-200px);
- * }
- *
- * Option 2: Add styling when header is sticky after scrolling
- * 
- * header.brro-sticky-effects {
- *     background: red !important;
- *     box-shadow: 0px 0px 60px #000000AF;
- *     transition: transform 400ms var(--cubix), box-shadow 400ms var(--cubix), background 400ms ease 100ms !important;
- * }
- * 
- * Option 3: Only certain widgets go up and down in the sticky header 
- * 
- * header.brro-sticky-effects {
- *     transform: translateY(-300px);
- * }
- * header.brro-sticky:not(.brro-headerup) .sticky-show {
- *     transform: translateY(300px);
- * }
- */
-
-/* ========================================
-   RESPONSIVE MEDIA QUERIES
-   ======================================== */
-
-/* Desktop styles (1180px and up) */
-@media (min-width: 1180px) {
-} 
-
-/* Tablet and up styles (768px and up) */
-@media (min-width: 768px) {
-} 
-
-/* Tablet only styles (768px to 1179px) */
-@media (min-width: 768px) and (max-width: 1179px) {
-} 
-
-/* Mobile styles (767px and down) */
-@media (max-width: 767px) {
-}
-
-/* ========================================
-   FOOTER STYLES
-   ======================================== */
-
-/* Back to top button - hidden state */
-#to-top.not-to-top {
-    z-index: -1;
-    pointer-events: none;
-    opacity: 0;
-}
-
-/* Back to top button - base styles */
-#to-top {
-    transition: all 600ms ease;
-    position: fixed;
-    right: 12px;
-    bottom: 12px;
-    z-index: 9999;
-}
-
-/* Back to top button - hover effect */
-#to-top:hover {
-    transform: translateY(-12px);
-}
-
-/* Back to top button - responsive sizing */
-@media (min-width: 1180px) {
-    #to-top {
-        width: clamp(72px, 6.11vw, 117px); /* 88px @ 1440px */
-        height: clamp(144px, 12.22vw, 235px); /* 176px @ 1440px */
-    }
-}
-
-@media (max-width: 1179px) {
-    #to-top {
-        width: clamp(54px, calc(8.76vw - 31.27px), 72px); /* 72px @ 1179px */
-        height: clamp(108px, calc(17.52vw - 62.54px), 144px); /* 144px @ 1179px */
-    }
-}
-
-/* Page top anchor for smooth scrolling */
-#page-top {
-    width: 100%;
-    position: absolute;
-    height: 1px;
-    margin-bottom: -1px;
-    top: -1px;
-}
-
-/* ========================================
-   TEXT & LINK STYLES
-   ======================================== */
-
-/* Active navigation link styling */
-a.current-page-open {
-    color: red !important;
-}
-
-/* ========================================
    ACCESSIBILITY UTILITIES
    ======================================== */
 
@@ -305,7 +60,22 @@ a.current-page-open {
 .flex { display: flex; gap: 0; }
 .flex-inline { display: inline-flex; gap: 0; }
 
-/* Flex Flow */
+/* ========================================
+   FLEX FLOW
+   Controls the direction (row = horizontal, col = vertical) and wrapping behavior of flex containers.
+   Use these classes to set both flex-direction and flex-wrap properties.
+   - row: horizontal direction (left to right by default)
+   - col: vertical direction (top to bottom by default)
+   - wrap: allows items to wrap onto multiple lines/columns
+   - nowrap: prevents wrapping, all items stay on a single line/column
+   - reverse: reverses the main axis direction
+   Examples:
+     .row-nowrap            → flex-direction: row; flex-wrap: nowrap;      (horizontal, no wrap)
+     .col-wrap              → flex-direction: column; flex-wrap: wrap;     (vertical, wrap)
+     .row-reverse-wrap      → flex-direction: row-reverse; flex-wrap: wrap; (horizontal reversed, wrap)
+     .col-reverse-nowrap    → flex-direction: column-reverse; flex-wrap: nowrap; (vertical reversed, no wrap)
+   Combine with other flex utility classes for advanced layouts.
+   ======================================== */
 .col-nowrap { flex-flow: column nowrap; }
 .col-wrap { flex-flow: column wrap; }
 .col-wrap-reverse { flex-flow: column wrap-reverse; }
@@ -340,8 +110,8 @@ a.current-page-open {
    Multi-line/column alignment:
    Applies to: Multi-line flex containers
    Examples:
-   .flex-wrap → align-content controls vertical alignment
-   .flex-wrap-reverse → align-content controls vertical alignment
+   .col-wrap → align-content controls horizontal alignment (main axis: column/vertical)
+   .row-wrap → align-content controls vertical alignment (main axis: row/horizontal)
    ======================================== */
 
 .content-start { align-content: flex-start; }
