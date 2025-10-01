@@ -63,7 +63,7 @@ function brro_project_active() {
 add_action('wp_enqueue_scripts', 'brro_flex_theme_enqueue_assets');
 function brro_flex_theme_enqueue_assets() {
     // Utility classes (load first)
-    $utilities_style = '/assets/css/main.css';
+    $utilities_style = '/assets/css/utilities.css';
     wp_enqueue_style(
         'brro-utilities',
         get_template_directory_uri() . $utilities_style,
