@@ -6,6 +6,7 @@
  */
 ?>
 </main>
+<?php if (get_the_ID() !== 46) : // Skip output of the footer on the alle info page ?>
 <footer>
     <?php
     // Load main footer content if it exists
@@ -20,6 +21,8 @@
     }
     ?>
 </footer>
+<?php endif; ?>
+
 <?php wp_footer(); ?>
 </body>
 </html>

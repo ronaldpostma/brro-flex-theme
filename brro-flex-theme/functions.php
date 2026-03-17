@@ -3,7 +3,7 @@
  * Brro Flex Theme Functions
  * 
  * @package Brro_Flex_Theme
- * @version 1.0.0
+ * @version 1.1.0
  */
 
 // Prevent direct access
@@ -81,10 +81,10 @@ function brro_flex_theme_enqueue_assets() {
     );
     
     // Specific site area only CSS
-    if (is_page('specific-page-slug')) {
-        $specific_style = '/assets/css/specific-site-area-style.css';
+    if (is_page('alle-info')) {
+        $specific_style = '/assets/css/about-us.css';
         wp_enqueue_style(
-            'brro-specific-site-area-style',
+            'brro-about-us-style',
             get_template_directory_uri() . $specific_style,
             [],
             filemtime(get_template_directory() . $specific_style)
@@ -100,23 +100,28 @@ function brro_flex_theme_enqueue_assets() {
         filemtime(get_template_directory() . $main_script),
         true
     );
-    
+    // Localize script for AJAX
+    wp_localize_script('brro-main', 'brro_ajax', [
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce'    => wp_create_nonce('brro_nonce')
+    ]);
     // Specific site area only JavaScript
-    if (is_page('specific-page-slug')) {
-        $specific_script = '/assets/js/specific-site-area-script.js';
+    if (is_page('alle-info')) {
+        $specific_script = '/assets/js/about-us.js';
         wp_enqueue_script(
-            'brro-specific-site-area-script',
+            'brro-about-us-script',
             get_template_directory_uri() . $specific_script,
             ['jquery'],
             filemtime(get_template_directory() . $specific_script),
             true
         );
     }
-    // Localize script for AJAX
-    wp_localize_script('brro-main', 'brro_ajax', [
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'nonce'    => wp_create_nonce('brro_nonce')
-    ]);
+    // Localize about-us.js with the site home URL
+    if (is_page('alle-info')) {
+        wp_localize_script('brro-about-us-script', 'brro_aboutus', [
+            'home_url' => home_url('/')
+        ]);
+    }
 }
 
 /**
@@ -140,6 +145,8 @@ require_once get_template_directory() . '/inc/global-functions.php';
 require_once get_template_directory() . '/inc/search-functions.php';
 // Include homepage functions
 require_once get_template_directory() . '/inc/homepage-functions.php';
+// Include popup functions
+require_once get_template_directory() . '/inc/popup-functions.php';
 
 /**
  * Admin-specific functionality (only load in admin)

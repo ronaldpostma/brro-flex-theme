@@ -206,10 +206,10 @@ function brro_get_admin_css_for_editors() {
     
     /* Brro separator menu labels (Dutch) */
     #toplevel_page_brro-separator-core .wp-menu-name:after {
-        content: "Site instellingen" !important;
+        content: "Site kern" !important;
     }
     #toplevel_page_brro-separator-functionality .wp-menu-name:after {
-        content: "Functies" !important;
+        content: "Instellingen" !important;
     }
     #toplevel_page_brro-separator-content .wp-menu-name:after {
         content: "Inhoud" !important;
@@ -227,11 +227,10 @@ function brro_get_admin_css_for_editors() {
     
     /* Custom dashboard logo display */
     .index-php #dashboard-widgets-wrap:before {
-        content: url(https://www.brro-client-website.nl/wp-content/uploads/logo.svg); /* replace with your logo */
+        content: url(/wp-content/uploads/2025/11/brrbrr.svg); /* replace with your logo */
         margin-left: calc(50% - 125px); /* 50% - half the width */
         height:250px; /* replace with your logo height */
         width:250px; /* replace with your logo width */
-        filter: invert(.7); /* if needed */
         visibility: visible;
         margin-bottom:64px;
         margin-top:68px;
@@ -258,6 +257,7 @@ function brro_get_admin_css_for_editors() {
     }
     
     /* Disable drag functionality for postboxes and widgets */
+    /**/
     #screen-meta-links,
     .handle-actions {
         display: none!important;
@@ -267,6 +267,7 @@ function brro_get_admin_css_for_editors() {
         cursor: default !important;
         pointer-events: none !important;
     }
+    /**/
 
     /* ========================================
        MEDIA LIBRARY CUSTOMIZATION
@@ -338,19 +339,9 @@ function brro_get_admin_css_for_editors() {
        CONTENT-SPECIFIC INSTRUCTIONS
        ======================================== */
     
-    /* Blog posts - Featured image explanation */
+    /* Projects - Featured image explanation */
     .post-type-post #postimagediv .inside:after {
-        content: "Wordt getoond als beeld naast de titel, en in het berichtenoverzicht.";
-    }
-    
-    /* Specific page - Content editor explanation */
-    .post-id-368 #wp-content-editor-tools:before {
-        content: "Dit is de tekst onder de titel(s) en na de lead intro tekst.";
-    }
-    
-    /* Custom post type - Content editor explanation */
-    .post-type-custom-post #wp-content-editor-tools:before {
-        content: "Omschrijving en details van het evenement onder de titel + afbeelding sectie."
+        content: "Wordt getoond als beeld voor SEO.";
     }
 
     /* ========================================
@@ -365,6 +356,17 @@ function brro_get_admin_css_for_editors() {
     [class*="yst"][class*="upsell"],
     [class*="yst"][class*="premium"] {
         display: none !important;
+    }
+    /* Yoast elements */
+    .yst-replacevar,
+    #snippet-editor-field-3-slug,
+    #yoast-google-preview-slug-metabox {
+        opacity: 0.6;
+        pointer-events: none;
+    }
+    #wpseo-section-social .yst-replacevar {
+        opacity: 1!important;
+        pointer-events:auto!important;
     }
     </style>
     <?php
