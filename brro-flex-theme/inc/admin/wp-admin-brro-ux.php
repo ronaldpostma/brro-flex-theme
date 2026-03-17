@@ -133,14 +133,6 @@ function brro_get_admin_css_for_all_users() {
         width: auto !important;
         height: auto !important;
     }
-
-    /* ACF maxlength character counter display */
-    div[brro-acf-data-maxlength]:before {
-        content: 'Maximaal ' attr(brro-acf-data-maxlength) ' karakters';
-        font-weight: 400;
-        margin: 4px 0;
-        font-style: italic;
-    }
     </style>
     <?php
     return ob_get_clean();
