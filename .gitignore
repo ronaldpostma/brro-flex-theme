@@ -1,0 +1,18 @@
+# Zipped plugin
+brro-flex-theme.zip
+brro-flex-theme-*.zip
+
+# Cursor folder
+.cursor
+.cursor/*
+
+#ref folder
+ref
+ref/*
+
+#brro-project folders
+brro-project.zip
+brro-project
+brro-project/*
+brro-project-*
+brro-project-*/*
