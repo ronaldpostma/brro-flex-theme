@@ -57,82 +57,9 @@ function brro_get_admin_css_for_all_users() {
     ?>
     <style>
     /* ========================================
-       ADMIN MENU CUSTOMIZATION
+       SITE SPECIFIC CSS, FOR ALL USERS
        ======================================== */
     
-    /* Admin menu sidebar fade-in effect from brro-core-wp-admin-script.js */
-    #adminmenu {
-        opacity: 0;
-        transition: opacity 150ms ease-in-out;
-    }
-    
-    /* Hide default WordPress menu items */
-    li#collapse-menu,
-    li.wp-menu-separator {
-        display: none!important;
-    }
-    
-    /* Brro custom menu separators styling */
-    .brro-separator .wp-menu-name {
-        font-size: 0;
-    }
-    .brro-separator .wp-menu-name:after {
-        font-size: 14px;
-    }
-    .brro-separator {
-        background-color: rgba(143, 4, 86, .9);
-        pointer-events: none;
-    }
-    .brro-separator.wp-has-current-submenu .wp-menu-image:before {
-        transform: rotate(180deg);
-    }
-    .brro-separator:not(#toplevel_page_brro-separator-core) a {
-        margin-top: 24px;
-    }
-    #toplevel_page_brro-help-link a {
-        margin-bottom: 20px;
-    }
-    
-    /* Brro separator menu labels */
-    #toplevel_page_brro-separator-core .wp-menu-name:after {content:"Core";}
-    #toplevel_page_brro-separator-functionality .wp-menu-name:after {content:"Functions";}
-    #toplevel_page_brro-separator-content .wp-menu-name:after {content:"Content";}
-
-    /* ========================================
-       CONTENT EDITOR LAYOUT
-       ======================================== */
-    
-    /* Center content editor on wide screens */
-    @media (min-width: 1700px) {
-        #poststuff #post-body.columns-2 {
-            max-width: 1180px;
-            margin-left: calc((100% - 1500px) / 2);
-        }
-    }
-
-    /* ========================================
-       FORM ELEMENTS & FIELDS
-       ======================================== */
-    
-    /* Featured image section styling */
-    #postimagediv h2:after {
-        margin-left: 6px;
-    }
-    #postimagediv h2 {
-        justify-content: start;
-    }
-
-    /* Hide default excerpt help text (replaced by custom) */
-    textarea#excerpt + p:not(.cust-excerpt) {
-        font-size: 0px !important;
-    }
-
-    /* ACF field styling */
-    /* Fix select2 dropdown sizing (except for locateandfiltermap) */
-    body:not(.post-type-locateandfiltermap) .select2-container .select2-selection--single {
-        width: auto !important;
-        height: auto !important;
-    }
     </style>
     <?php
     return ob_get_clean();
@@ -142,29 +69,6 @@ function brro_get_admin_css_for_editors() {
     ob_start();
     ?>
     <style>
-    /* ========================================
-       ADMIN BAR & INTERFACE ELEMENTS
-       ======================================== */
-    
-    /* Hide most admin bar items and footer */
-    #wpadminbar li, .wp-admin #wpfooter {
-        display:none!important;
-    }
-    
-    /* Show essential admin bar items */
-    #wpadminbar li#wp-admin-bar-site-name, 
-    #wpadminbar li#wp-admin-bar-my-account, 
-    #wpadminbar li#wp-admin-bar-logout {
-        display:inherit!important;
-    }
-    
-    /* Hide admin notices (except errors and user switching) */
-    .e-notice, 
-    div.notice:not(#user_switching):not(.error), 
-    .updated.woocommerce-message {
-        display:none!important;
-    }
-
     /* ========================================
        ADMIN MENU CUSTOMIZATION
        ======================================== */
@@ -181,46 +85,9 @@ function brro_get_admin_css_for_editors() {
     }
 
     /* ========================================
-       DASHBOARD CUSTOMIZATION
-       ======================================== */
-    
-    /* Hide default dashboard elements */
-    .index-php .wrap h1,
-    .index-php #dashboard-widgets-wrap {
-        visibility:hidden;
-    }
-    
-    /* Custom dashboard logo display */
-    .index-php #dashboard-widgets-wrap:before {
-        content: url(/wp-content/uploads/2025/11/brrbrr.svg); /* replace with your logo */
-        margin-left: calc(50% - 125px); /* 50% - half the width */
-        height:250px; /* replace with your logo height */
-        width:250px; /* replace with your logo width */
-        visibility: visible;
-        margin-bottom:64px;
-        margin-top:68px;
-        display:block;
-    }
-
-    /* ========================================
        POST EDITOR CUSTOMIZATION
        ======================================== */
-    
-    /* Hide page template selector */
-    p.page-template-label-wrapper, 
-    #page_template {
-        display:none!important;
-    }
-    
-    /* Hide publishing actions (except current time and status) */
-    #misc-publishing-actions > div:not(.curtime):not(.misc-pub-post-status), 
-    #minor-publishing-actions {
-        visibility:hidden;
-        height:2px;
-        overflow:hidden;
-        padding:0;
-    }
-    
+
     /* Disable drag functionality for postboxes and widgets */
     /**/
     #screen-meta-links,
@@ -233,24 +100,6 @@ function brro_get_admin_css_for_editors() {
         pointer-events: none !important;
     }
     /**/
-
-    /* ========================================
-       MEDIA LIBRARY CUSTOMIZATION
-       ======================================== */
-    
-    /* Hide media edit/delete actions */
-    .upload-php .row-actions .edit,
-    .upload-php .row-actions .delete,
-    .upload-php .bulkactions,
-    .media-new-php a.edit-attachment {
-        display:none!important;
-    }
-    
-    /* Enhance media filename display */
-    .upload-php .filename {
-        font-weight:bold;
-        font-size:14px;
-    }
 
     /* ========================================
        CONTENT LISTING CUSTOMIZATION
