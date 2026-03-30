@@ -1,6 +1,6 @@
 <?php
 /**
- * The project specific main header template, already wrapped in <footer> tag
+ * The project specific main footer template, already wrapped in <footer> tag
  *
  * @package Brro_Flex_Theme
  */

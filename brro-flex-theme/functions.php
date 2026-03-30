@@ -11,6 +11,9 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+// Page slug for secondary header + some-page.css / some-page.js (change per project).
+define('BRRO_FLEX_SOME_PAGE_SLUG', 'some-page-slug');
+
 /**
  * Theme Setup
  */
@@ -73,7 +76,7 @@ function brro_flex_theme_enqueue_assets() {
     );
     
     // Specific site area only CSS
-    if (is_page('some-page-slug')) {
+    if (is_page(BRRO_FLEX_SOME_PAGE_SLUG)) {
         $specific_style = '/assets/css/some-page.css';
         wp_enqueue_style(
             'brro-some-page-style',
@@ -92,13 +95,8 @@ function brro_flex_theme_enqueue_assets() {
         filemtime(get_template_directory() . $main_script),
         true
     );
-    // Localize script for AJAX
-    wp_localize_script('brro-main', 'brro_ajax', [
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'nonce'    => wp_create_nonce('brro_nonce')
-    ]);
     // Specific site area only JavaScript
-    if (is_page('some-page-slug')) {
+    if (is_page(BRRO_FLEX_SOME_PAGE_SLUG)) {
         $specific_script = '/assets/js/some-page.js';
         wp_enqueue_script(
             'brro-some-page-script',
@@ -109,7 +107,7 @@ function brro_flex_theme_enqueue_assets() {
         );
     }
     // Localize about-us.js with the site home URL
-    if (is_page('some-page-slug')) {
+    if (is_page(BRRO_FLEX_SOME_PAGE_SLUG)) {
         wp_localize_script('brro-some-page-script', 'brro_somepage', [
             'home_url' => home_url('/')
         ]);

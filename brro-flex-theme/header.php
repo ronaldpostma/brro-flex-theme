@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	
     <!-- Adobe Fonts kit URL IF USED -->
-    <link rel="stylesheet" href="https://use.typekit.net/emq7ubj.css"> 
+    <link rel="stylesheet" href="https://use.typekit.net/kit-code.css"> 
     
     <script>
         (function() {
@@ -36,7 +36,7 @@ $use_secondary_header = false;
 if (file_exists($main_header_path) && is_front_page()) {
     $header_class = ' main-header';
     $use_main_header = true;
-} else if (file_exists($secondary_header_path) && is_page('some-page-slug')) {
+} else if (file_exists($secondary_header_path) && is_page(BRRO_FLEX_SOME_PAGE_SLUG)) {
     $header_class = ' secondary-header mob:row-wrap mob:items-between';
     $use_secondary_header = true;
 }
