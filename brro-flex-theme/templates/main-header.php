@@ -7,83 +7,24 @@
 
 $logo_svg = '
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="brrbrr" xmlns="http://www.w3.org/2000/svg" version="1.1" width="96" height="88" viewBox="0 0 96 88" fill="none">
-    <g id="r-zw-boven2" class="letter-shake min-hidden">
-        <path class="trueblack" d="M74.3,7.5c8.1,0,13,4.2,13,11.2s-3.6,9.1-7.6,10.3l8.4,15.2h-26.8V7.5h13Z"/>
-        <path class="trueblack" d="M86.3,18.7c0-3.3-1.1-5.8-3.1-7.5-2-1.7-5-2.7-8.9-2.7h-12v34.7h24.1l-7.6-13.7c-.1-.3-.2-.6,0-.9.1-.3.3-.5.6-.6,3.6-1.1,6.9-4.3,6.9-9.3ZM88.3,18.7c0,5.5-3.3,9.2-7.1,10.8l7.8,14.2c.2.3.2.7,0,1-.2.3-.5.5-.9.5h-26.8c-.6,0-1-.4-1-1V7.5c0-.6.4-1,1-1h13c4.2,0,7.7,1.1,10.2,3.2,2.5,2.1,3.8,5.2,3.8,9Z"/>
-    </g>
-    <g id="r-zw-boven" class="letter-shake min-hidden">
-        <path class="trueblack" d="M43.8,7.5c8.1,0,12.9,4.2,12.9,11.2s-3.6,9.1-7.5,10.3l8.3,15.2h-26.5V7.5h12.8Z"/>
-        <path class="trueblack" d="M55.7,18.7c0-3.3-1.1-5.8-3.1-7.5-2-1.7-4.9-2.7-8.8-2.7h-11.8v34.7h23.8l-7.5-13.7c-.1-.3-.2-.6,0-.9.1-.3.3-.5.6-.6,3.6-1.1,6.8-4.3,6.8-9.3ZM57.7,18.7c0,5.5-3.2,9.2-7.1,10.8l7.8,14.2c.2.3.2.7,0,1-.2.3-.5.5-.9.5h-26.5c-.6,0-1-.4-1-1V7.5c0-.6.4-1,1-1h12.8c4.2,0,7.7,1.1,10.1,3.2,2.5,2.1,3.8,5.2,3.8,9Z"/>
-    </g>
-    <g id="b-zw-boven" class="letter-shake min-hidden">
-        <path class="trueblack" d="M27.6,33.9c0,6.2-4.9,10.4-12.2,10.4H1V7.5h13c7.2,0,12,3.8,12,10s-1.7,6.1-4.6,7.4c3.6,1.3,6.1,4.9,6.1,8.9Z"/>
-        <path class="trueblack" d="M25.1,17.5c0-2.9-1.1-5.1-2.9-6.6-1.9-1.5-4.6-2.4-8.1-2.4H2v34.7h13.3c3.5,0,6.3-1,8.2-2.6,1.9-1.6,3-3.9,3-6.7s-2.2-6.8-5.4-8c-.4-.1-.6-.5-.7-.9,0-.4.2-.8.6-.9,2.5-1.1,4-3.7,4-6.5ZM27.1,17.5c0,2.9-1.3,5.6-3.5,7.3,3,1.9,5,5.3,5,9,0,3.4-1.3,6.3-3.7,8.3-2.4,2-5.6,3.1-9.5,3.1H1c-.6,0-1-.4-1-1V7.5c0-.6.4-1,1-1h13c3.8,0,7,1,9.4,2.9,2.3,1.9,3.7,4.7,3.7,8.1Z"/>
-    </g>
-    <g id="r-boven2" class="letter-shake">
-        <path class="white swap-fill" d="M80.8,1.1c8.1,0,13,4.2,13,11.2s-3.6,9.1-7.6,10.3l8.4,15.2h-26.8V1.1h13Z"/>
-        <path class="trueblack" d="M92.8,12.3c0-3.3-1.1-5.8-3.1-7.5-2-1.7-5-2.7-8.9-2.7h-12v34.7h24.1l-7.6-13.7c-.1-.3-.2-.6,0-.9.1-.3.3-.5.6-.6,3.6-1.1,6.9-4.3,6.9-9.3ZM94.8,12.3c0,5.5-3.3,9.2-7.1,10.8l7.8,14.2c.2.3.2.7,0,1-.2.3-.5.5-.9.5h-26.8c-.6,0-1-.4-1-1V1.1c0-.6.4-1,1-1h13c4.2,0,7.7,1.1,10.2,3.2,2.5,2.1,3.8,5.2,3.8,9Z"/>
-    </g>
-    <g id="r-boven" class="letter-shake xl">
-        <path class="white swap-fill" d="M50.2,1.1c8.1,0,12.9,4.2,12.9,11.2s-3.6,9.1-7.5,10.3l8.3,15.2h-26.5V1.1h12.8Z"/>
-        <path class="trueblack" d="M62.1,12.3c0-3.3-1.1-5.8-3.1-7.5-2-1.7-4.9-2.7-8.8-2.7h-11.8v34.7h23.8l-7.5-13.7c-.1-.3-.2-.6,0-.9.1-.3.3-.5.6-.6,3.6-1.1,6.8-4.3,6.8-9.3ZM64.1,12.3c0,5.5-3.2,9.2-7.1,10.8l7.8,14.2c.2.3.2.7,0,1-.2.3-.5.5-.9.5h-26.5c-.6,0-1-.4-1-1V1.1c0-.6.4-1,1-1h12.8c4.2,0,7.7,1.1,10.1,3.2,2.5,2.1,3.8,5.2,3.8,9Z"/>
-    </g>
-        <g id="b-boven" class="letter-shake">
-        <path class="white swap-fill" d="M34,27.4c0,6.2-4.9,10.4-12.2,10.4H7.4V1.1h13c7.2,0,12,3.8,12,10s-1.7,6.1-4.6,7.4c3.6,1.3,6.1,4.9,6.1,8.9h0Z"/>
-        <path class="trueblack" d="M31.5,11.1c0-2.9-1.1-5.1-2.9-6.6-1.9-1.5-4.6-2.4-8.1-2.4h-12v34.7h13.3c3.5,0,6.3-1,8.2-2.6,1.9-1.6,3-3.9,3-6.7,0,0,0,0,0,0,0-3.6-2.2-6.8-5.4-7.9-.4-.1-.6-.5-.7-.9,0-.4.2-.8.6-.9,2.5-1.1,4-3.7,4-6.5ZM33.5,11.1c0,2.9-1.3,5.6-3.5,7.3,3,1.9,5,5.3,5,9s0,0,0,0c0,3.4-1.4,6.2-3.7,8.2-2.4,2-5.6,3.1-9.5,3.1H7.4c-.6,0-1-.4-1-1V1.1c0-.6.4-1,1-1h13c3.8,0,7,1,9.4,2.9,2.3,1.9,3.7,4.7,3.7,8.1Z"/>
-    </g>
-    <g id="r-zw-onder2" class="letter-shake xl min-hidden">
-        <path class="trueblack" d="M74.3,49.5c8.1,0,13,4.2,13,11.2s-3.6,9.1-7.6,10.3l8.4,15.2h-26.8v-36.7h13Z"/>
-        <path class="trueblack" d="M86.3,60.7c0-3.3-1.1-5.8-3.1-7.5-2-1.7-5-2.7-8.9-2.7h-12v34.7h24.1l-7.6-13.7c-.1-.3-.2-.6,0-.9.1-.3.3-.5.6-.6,3.6-1.1,6.9-4.3,6.9-9.3ZM88.3,60.7c0,5.5-3.3,9.2-7.1,10.8l7.8,14.2c.2.3.2.7,0,1-.2.3-.5.5-.9.5h-26.8c-.6,0-1-.4-1-1v-36.7c0-.6.4-1,1-1h13c4.2,0,7.7,1.1,10.2,3.2,2.5,2.1,3.8,5.2,3.8,9Z"/>
-    </g>
-    <g id="r-zw-onder" class="letter-shake min-hidden">
-        <path class="trueblack" d="M43.8,49.5c8.1,0,12.9,4.2,12.9,11.2s-3.6,9.1-7.5,10.3l8.3,15.2h-26.5v-36.7h12.8Z"/>
-        <path class="trueblack" d="M55.7,60.7c0-3.3-1.1-5.8-3.1-7.5-2-1.7-4.9-2.7-8.8-2.7h-11.8v34.7h23.8l-7.5-13.7c-.1-.3-.2-.6,0-.9.1-.3.3-.5.6-.6,3.6-1.1,6.8-4.3,6.8-9.3ZM57.7,60.7c0,5.5-3.2,9.2-7.1,10.8l7.8,14.2c.2.3.2.7,0,1-.2.3-.5.5-.9.5h-26.5c-.6,0-1-.4-1-1v-36.7c0-.6.4-1,1-1h12.8c4.2,0,7.7,1.1,10.1,3.2,2.5,2.1,3.8,5.2,3.8,9Z"/>
-    </g>
-    <g id="b-zw-onder" class="letter-shake min-hidden">
-        <path class="trueblack" d="M27.6,75.9c0,6.2-4.9,10.4-12.2,10.4H1v-36.7h13c7.2,0,12,3.8,12,10s-1.7,6.1-4.6,7.4c3.6,1.3,6.1,4.9,6.1,8.9Z"/>
-        <path class="trueblack" d="M25.1,59.5c0-2.9-1.1-5.1-2.9-6.6-1.9-1.5-4.6-2.4-8.1-2.4H2v34.7h13.3c3.5,0,6.3-1,8.2-2.6,1.9-1.6,3-3.9,3-6.7s-2.2-6.8-5.4-8c-.4-.1-.6-.5-.7-.9,0-.4.2-.8.6-.9,2.5-1.1,4-3.7,4-6.5ZM27.1,59.5c0,2.9-1.3,5.6-3.5,7.3,3,1.9,5,5.3,5,9,0,3.4-1.3,6.3-3.7,8.3-2.4,2-5.6,3.1-9.5,3.1H1c-.6,0-1-.4-1-1v-36.7c0-.6.4-1,1-1h13c3.8,0,7,1,9.4,2.9,2.3,1.9,3.7,4.7,3.7,8.1Z"/>
-    </g>
-    <g id="r-onder2" class="letter-shake xl">
-        <path class="white swap-fill" d="M80.8,43.1c8.1,0,13,4.2,13,11.2s-3.6,9.1-7.6,10.3l8.4,15.2h-26.8v-36.7h13Z"/>
-        <path class="trueblack" d="M92.8,54.3c0-3.3-1.1-5.8-3.1-7.5-2-1.7-5-2.7-8.9-2.7h-12v34.7h24.1l-7.6-13.7c-.1-.3-.2-.6,0-.9.1-.3.3-.5.6-.6,3.6-1.1,6.9-4.3,6.9-9.3ZM94.8,54.3c0,5.5-3.3,9.2-7.1,10.8l7.8,14.2c.2.3.2.7,0,1-.2.3-.5.5-.9.5h-26.8c-.6,0-1-.4-1-1v-36.7c0-.6.4-1,1-1h13c4.2,0,7.7,1.1,10.2,3.2,2.5,2.1,3.8,5.2,3.8,9Z"/>
-    </g>
-    <g id="r-onder" class="letter-shake">
-        <path class="white swap-fill" d="M50.2,43.1c8.1,0,12.9,4.2,12.9,11.2s-3.6,9.1-7.5,10.3l8.3,15.2h-26.5v-36.7h12.8Z"/>
-        <path class="trueblack" d="M62.1,54.3c0-3.3-1.1-5.8-3.1-7.5-2-1.7-4.9-2.7-8.8-2.7h-11.8v34.7h23.8l-7.5-13.7c-.1-.3-.2-.6,0-.9.1-.3.3-.5.6-.6,3.6-1.1,6.8-4.3,6.8-9.3ZM64.1,54.3c0,5.5-3.2,9.2-7.1,10.8l7.8,14.2c.2.3.2.7,0,1-.2.3-.5.5-.9.5h-26.5c-.6,0-1-.4-1-1v-36.7c0-.6.4-1,1-1h12.8c4.2,0,7.7,1.1,10.1,3.2,2.5,2.1,3.8,5.2,3.8,9Z"/>
-    </g>
-    <g id="b-onder" class="letter-shake">
-        <path class="white swap-fill" d="M34,69.4c0,6.2-4.9,10.4-12.2,10.4H7.4v-36.7h13c7.2,0,12,3.8,12,10s-1.7,6.1-4.6,7.4c3.6,1.3,6.1,4.9,6.1,8.9h0Z"/>
-        <path class="trueblack" d="M31.5,53.1c0-2.9-1.1-5.1-2.9-6.6-1.9-1.5-4.6-2.4-8.1-2.4h-12v34.7h13.3c3.5,0,6.3-1,8.2-2.6,1.9-1.6,3-3.9,3-6.7,0,0,0,0,0,0,0-3.6-2.2-6.8-5.4-7.9-.4-.1-.6-.5-.7-.9,0-.4.2-.8.6-.9,2.5-1.1,4-3.7,4-6.5ZM33.5,53.1c0,2.9-1.3,5.6-3.5,7.3,3,1.9,5,5.3,5,9s0,0,0,0c0,3.4-1.4,6.2-3.7,8.2-2.4,2-5.6,3.1-9.5,3.1H7.4c-.6,0-1-.4-1-1v-36.7c0-.6.4-1,1-1h13c3.8,0,7,1,9.4,2.9,2.3,1.9,3.7,4.7,3.7,8.1Z"/>
-    </g>
+<svg>
 </svg>';
 ?>
 
-<div id="max-min-toggle" class="flex row-wrap justify-between items-center mob:self-end acumin medium size-13">
-    <span class="min">min</span>
-    <span class="toggle toggle-outer" role="button" tabindex="1" aria-label="Maximaal of minimaal effect" aria-pressed="false">
-        <span class="toggle-inner"></span>
-    </span>
-    <span class="max">meer</span>
-</div>
-
-<div class="flex outer-flex-wrapper row-wrap justify-start items-center header-bottom-wrapper">
-    <div id="info-box" role="button" tabindex="1" aria-label="Meer informatie" aria-pressed="false">
-        <div class="info-box-inner flex row-wrap justify-start items-center acumin medium size-18-30 white">
-            <span class="hide-except-hover info-underline">Alle&nbsp;</span>
-            <span class="info-underline">i</span>
-            <span class="hide-except-hover info-underline">nfo</span>
-            <span class="info-box-inner-arrow">&nbsp;></span>
-        </div>
-    </div>
+<div class="flex outer-flex-wrapper row-wrap justify-start items-center">
     <div id="logo">
         <?php
-        $is_home = ( is_front_page() && is_home() ) || ( is_front_page() && !is_home() );
-        $logo_href = $is_home ? '#page-top' : esc_url( home_url( '/' ) );
+        if ( is_front_page() ) {
+            $logo_href = '#page-top';
+            $logo_aria_label = __( 'Terug naar boven', 'brro-flex-theme' );
+        } else {
+            $logo_href = esc_url( home_url( '/' ) );
+            /* translators: %s: site title */
+            $logo_aria_label = sprintf( __( 'Naar homepage: %s', 'brro-flex-theme' ), get_bloginfo( 'name' ) );
+        }
         ?>
-        <a href="<?php echo $logo_href; ?>" tabindex="1" role="button" aria-label="Terug naar boven" aria-pressed="false">
+        <a href="<?php echo esc_attr( $logo_href ); ?>" tabindex="1" role="button" aria-label="<?php echo esc_attr( $logo_aria_label ); ?>" aria-pressed="false">
             <?php echo $logo_svg; ?>	
         </a>
     </div>
-    <div id="slogan" class="acumin medium size-18-20"><?php bloginfo( 'description' ); ?></div>
 </div>

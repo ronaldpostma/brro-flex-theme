@@ -3,7 +3,7 @@
  * Brro Flex Theme Functions
  * 
  * @package Brro_Flex_Theme
- * @version 1.1.0
+ * @version 1.2.0
  */
 
 // Prevent direct access
@@ -49,14 +49,6 @@ function brro_flex_theme_setup() {
 }
 
 /**
- * Brro Project Plugin Detection
- * Safe wrapper function to check if brro-project plugin is active
- */
-function brro_project_active() {
-    return function_exists('brro_is_project_active') ? brro_is_project_active() : false;
-}
-
-/**
  * Enqueue Styles & Scripts
  * The filemtime() function is a version control technique that automatically updates the version number whenever you modify * a file with UNIX timestamp.
  */
@@ -81,10 +73,10 @@ function brro_flex_theme_enqueue_assets() {
     );
     
     // Specific site area only CSS
-    if (is_page('alle-info')) {
-        $specific_style = '/assets/css/about-us.css';
+    if (is_page('some-page-slug')) {
+        $specific_style = '/assets/css/some-page.css';
         wp_enqueue_style(
-            'brro-about-us-style',
+            'brro-some-page-style',
             get_template_directory_uri() . $specific_style,
             [],
             filemtime(get_template_directory() . $specific_style)
@@ -106,10 +98,10 @@ function brro_flex_theme_enqueue_assets() {
         'nonce'    => wp_create_nonce('brro_nonce')
     ]);
     // Specific site area only JavaScript
-    if (is_page('alle-info')) {
-        $specific_script = '/assets/js/about-us.js';
+    if (is_page('some-page-slug')) {
+        $specific_script = '/assets/js/some-page.js';
         wp_enqueue_script(
-            'brro-about-us-script',
+            'brro-some-page-script',
             get_template_directory_uri() . $specific_script,
             ['jquery'],
             filemtime(get_template_directory() . $specific_script),
@@ -117,8 +109,8 @@ function brro_flex_theme_enqueue_assets() {
         );
     }
     // Localize about-us.js with the site home URL
-    if (is_page('alle-info')) {
-        wp_localize_script('brro-about-us-script', 'brro_aboutus', [
+    if (is_page('some-page-slug')) {
+        wp_localize_script('brro-some-page-script', 'brro_somepage', [
             'home_url' => home_url('/')
         ]);
     }
@@ -145,12 +137,10 @@ require_once get_template_directory() . '/inc/global-functions.php';
 require_once get_template_directory() . '/inc/search-functions.php';
 // Include homepage functions
 require_once get_template_directory() . '/inc/homepage-functions.php';
-// Include popup functions
-require_once get_template_directory() . '/inc/popup-functions.php';
 
 /**
  * Admin-specific functionality (only load in admin)
  */
-if (is_admin() && !brro_project_active()) {
+if (is_admin()) {
     require_once get_template_directory() . '/inc/admin/wp-admin-brro-ux.php';
 }
