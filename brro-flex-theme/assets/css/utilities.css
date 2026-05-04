@@ -34,6 +34,58 @@ img {
 }
 
 /* ========================================
+   RESPONSIVE DISPLAY UTILITIES
+   ======================================== */
+
+/* Desktop only (1024px and up) */
+@media (min-width: 1024px) {
+   .only.desk {
+       display: revert !important;
+   }
+   .only.mob:not(.desk),
+   .only.tab:not(.desk) {
+       display: none !important;
+   }
+}
+
+/* Tablet only (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+   .only.tab {
+       display: revert !important;
+   }
+   .only.mob:not(.tab),
+   .only.desk:not(.tab) {
+       display: none !important;
+   }
+}
+
+/* Mobile only (767px and down) */
+@media (max-width: 767px) {
+   .only.mob {
+       display: revert !important;
+   }
+   .only.desk:not(.mob),
+   .only.tab:not(.mob) {
+       display: none !important;
+   }
+   .def-width-mob {
+       width: var(--def-mob)!important;
+       margin:0!important;
+       box-sizing: border-box;
+   }
+   .small-width-mob {
+       width: var(--small-mob)!important;
+       margin:0!important;
+       box-sizing: border-box;
+   }
+   .wide-width-mob {
+       width: var(--wide-mob)!important;
+       margin:0!important;
+       box-sizing: border-box;
+   }
+}
+
+/* ========================================
    FLEX CONTAINER WRAPPERS
    ======================================== */
 .brro-flex-page {

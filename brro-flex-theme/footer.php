@@ -9,16 +9,12 @@
 
 <footer>
     <?php
-    // Load main footer content if it exists
+    // Load main footer content if it exists.
     $main_footer = get_template_directory() . '/templates/main-footer.php';
-    if (file_exists($main_footer)) {
+    if ( file_exists( $main_footer ) ) {
         include $main_footer;
-    } else {
-        // Default footer content (fallback)
-        ?>
-        <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
-        <?php
     }
+    // No silent fallback content. Footer markup is project-specific.
     ?>
 </footer>
 

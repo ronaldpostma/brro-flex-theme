@@ -1,10 +1,8 @@
 <?php
 /**
  * Admin-specific functions for brro-flex-theme
- * Project-specific admin customizations
- * 
- * Only active when brro-project plugin is not active
- * 
+ * Project-specific admin customizations.
+ *
  * @package Brro_Flex_Theme
  */
 
@@ -152,11 +150,8 @@ function brro_get_admin_css_for_editors() {
     /* ========================================
        CONTENT-SPECIFIC INSTRUCTIONS
        ======================================== */
-    
-    /* Projects - Featured image explanation */
-    .post-type-post #postimagediv .inside:after {
-        content: "Wordt getoond als beeld voor SEO.";
-    }
+
+    /* Add project-specific content/editor instructions here. */
 
     /* ========================================
        PLUGIN ELEMENT HIDING

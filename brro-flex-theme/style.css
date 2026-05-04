@@ -21,45 +21,14 @@ Text Domain: brro-flex-theme
     --def-mob: clamp(309px, calc(28.26vw + 218.28px), 435px) /*320px @ 360 : 435px @ 767*/;
     --small-mob: clamp(290px, calc(19.66vw + 209.24px), 360px);
     --wide-mob: clamp(300px, calc(63.88vw + 90.02px), 580px);
-    --color1 : #FFAEEF;
-    --color2: #1936EF;
-    --color3: #1d1d1b;
-    --cubix: cubic-bezier(.8, 0, .4, 1);
-    --cubixslow: cubic-bezier(.55, 0, 0, 1);
+    --pink : #FFAEEF;
+    --blue: #1936EF;
+    --black: #1d1d1b;
 }
 
 /* ========================================
-   ANIMATIONS
+   CUSTOM ANIMATIONS
    ======================================== */
-/* Logo letter shake animation */
-@keyframes some-animation {
-    0% { transform: rotate(-8deg); }
-    50% { transform: rotate(6deg); }
-    100% { transform: rotate(-8deg); }
-}
-
-/* ========================================
-   FONT FACES
-   ======================================== */
-@font-face {
-    font-family: "NameOfFont";
-    src: url('assets/fonts/font.woff2') format('woff2'), url('assets/fonts/font.woff') format('woff'); 
-}
-
-/* Colors */
-.color1 {
-    color: var(--color1);
-}
-.color2 {
-    color: var(--color2);
-}
-.color3 {
-    color: var(--color3);
-}
-
-.transparent {
-    color: transparent;
-}
 
 /* ========================================
    WORDPRESS ADMIN BAR
@@ -80,14 +49,6 @@ html {
     margin: 0 !important;
 }
 
-/* Ensure body has relative positioning for absolute positioned children */
-body {
-    overflow: hidden;
-    position: relative;
-    transition: background 250ms var(--cubix);
-    margin:0 !important;
-}
-
 
 /* ========================================
    FORM ELEMENTS
@@ -102,247 +63,73 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 /* ========================================
-   RESPONSIVE DISPLAY UTILITIES
+   COLOR UTILITY CLASSES
    ======================================== */
-
-/* Desktop only (1180px and up) */
-@media (min-width: 1180px) {
-    .only.desk {
-        display: revert !important;
-    }
-    .only.mob:not(.desk),
-    .only.tab:not(.desk) {
-        display: none !important;
-    }
+.pink {
+    color: var(--pink);
+}
+.pink-hover:hover {
+    color: var(--pink);
+}
+.pink-bg {
+    background-color: var(--pink);
+}
+.pink-bg-hover:hover {
+    background-color: var(--pink);
+}
+.blue-hover:hover {
+    color: var(--blue);
+}
+.blue-bg {
+    background-color: var(--blue);
+}
+.blue-bg-hover:hover {
+    background-color: var(--blue);
+}
+.blue {
+    color: var(--blue);
+}
+.black-hover:hover {
+    color: var(--black);
+}
+.black-bg {
+    background-color: var(--black);
+}
+.black-bg-hover:hover {
+    background-color: var(--black);
+}
+.black {
+    color: var(--black);
+}
+.transparent {
+    color: transparent;
 }
 
-/* Tablet only (768px to 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .only.tab {
-        display: revert !important;
-    }
-    .only.mob:not(.tab),
-    .only.desk:not(.tab) {
-        display: none !important;
-    }
-}
-
-/* Mobile only (767px and down) */
-@media (max-width: 767px) {
-    .only.mob {
-        display: revert !important;
-    }
-    .only.desk:not(.mob),
-    .only.tab:not(.mob) {
-        display: none !important;
-    }
-    .width-def-mob {
-        width: var(--def-mob)!important;
-        margin:0!important;
-        box-sizing: border-box;
-    }
-    .width-small-mob {
-        width: var(--small-mob)!important;
-        margin:0!important;
-        box-sizing: border-box;
-    }
-    .width-wide-mob {
-        width: var(--wide-mob)!important;
-        margin:0!important;
-        box-sizing: border-box;
-    }
-}
+/* ========================================
+   FONT STYLES
+   ======================================== */
 
 /* ========================================
    (STICKY) HEADER 
    ======================================== */
-
-/* Sticky header transition effects */
-/* Fixed positioning for sticky header */
-header.main-header {
-    position: fixed;
-    width: auto;
-    transform: translateY(-1000px);
-    top: 0;
-    left: 0;
-    z-index: 9999;
-}
 
 
 /* ========================================
    FOOTER STYLES
    ======================================== */
 
-/* Back to top button - hidden state */
-#to-top.not-to-top {
-    z-index: -1;
-    pointer-events: none;
-    opacity: 0;
-}
-
-/* Back to top button - base styles */
-#to-top {
-    transition: all 600ms ease;
-    position: fixed;
-    right: 12px;
-    bottom: 12px;
-    z-index: 9999;
-}
-
-/* Back to top button - hover effect */
-#to-top:hover {
-    transform: translateY(-12px);
-}
-
-/* Page top anchor for smooth scrolling */
-#page-top {
-    width: 100%;
-    position: absolute;
-    height: 1px;
-    margin-bottom: -1px;
-    top: -1px;
-}
 
 /* ========================================
    TEXT & LINK STYLES
    ======================================== */
 
-p {
-    margin-block-start: 0;
-    margin-block-end: clamp(20px, 1.94vw, 31px) /*28px @ 1440*/;
-}
-p:last-of-type {
-    margin-block-end: 0;
-}
-
-h1,h2,h3,h4,h5,h6 {
-    margin-block-start: 0;
-    margin-block-end: 0;
-}
-
-/* Active navigation link styling */
-.current-section-visible {
-    color: var(--lime) !important;
-}
-.project-text a {
-    color: var(--trueblack) !important;
-}
-a {
-    transition: color 250ms var(--cubix);
-}
-a:not(.underline) {
-    text-decoration: none;
-}
-.underline,
-.project-text a {
-    text-decoration: underline;
-    text-underline-offset: clamp(4px, 0.35vw, 6px) /*5px @ 1440*/;
-    text-decoration-thickness: clamp(2px, 0.17vw, 3px) /*2.5px @ 1440*/;
-}
-.hover-underline:hover,
-button:hover .button-text,
-a.button:hover .button-text {
-    text-decoration: underline;
-    text-underline-offset: clamp(4px, 0.35vw, 6px) /*5px @ 1440*/;
-    text-decoration-thickness: clamp(2px, 0.17vw, 3px) /*2.5px @ 1440*/;
-}
-.small-underline,
-button .button-text,
-a.button .button-text,
-.project-text a {
-    text-underline-offset: 2.5px!important;
-    text-decoration-thickness: 1px!important;
-}
-#info-box:hover .info-underline {
-    text-decoration-color: var(--white)!important;
-}
-#back:hover .info-underline {
-    text-decoration-color: var(--lime)!important;
-}
-.project-text a:hover {
-    color: var(--blue) !important;
-}
-.max-mode button:hover .button-text,
-.max-mode a.button:hover .button-text {
-    text-decoration-color: var(--trueblack)!important;
-}
-.min-mode button:hover .button-text,
-.min-mode a.button:hover .button-text {
-    text-decoration-color: var(--white)!important;
-}
-#info-box .info-underline,
-button .button-text,
-a.button .button-text {
-    text-decoration-color: transparent!important;
-}
-#info-box .info-underline,
-#back:hover .info-underline {
-    text-decoration: underline;
-    text-underline-offset: 2.5px!important;
-    text-decoration-thickness: 1px!important;
-}
-
-/* FontName font */
-.fontname {
-    font-family: "FontName", sans-serif;;
-    font-weight: 100;
-}
-.extra-light {
-    font-weight: 200;
-}
-.light {
-    font-weight: 300;
-}
-.regular {
-    font-weight: 400;
-}
-
-.semibold,
-.fontname strong,
-strong.acumfontnamein,
-.fontname b,
-b.fontname {
-    font-weight: 600;
-}
-.bold {
-    font-weight: 700;
-}
-
-/* Size pairings */
-.size-80-80 {
-    font-size: clamp(57px, 5.56vw, 89px) /*80px @ 1440*/;
-    line-height: clamp(57px, 5.56vw, 89px) /*80px @ 1440*/;
-}
-@media (max-width: 767px) {
-    .size-80-80 {
-        font-size: clamp(34px, calc(5.16vw + 17.43px), 57px) /*36px @ 360 : 57px @ 767*/!important;
-        line-height: clamp(34px, calc(5.16vw + 17.43px), 57px) /*36px @ 360 : 57px @ 767*/!important;
-    }
-}
-
-.size-50-50--1 {
-    font-size: clamp(36px, 3.47vw, 56px) /*50px @ 1440*/;
-    line-height: clamp(36px, 3.47vw, 56px) /*50px @ 1440*/;
-    letter-spacing: calc( clamp(36px, 3.47vw, 56px) / 100) /* 1% */;
-}
 
 /* ========================================
    BORDERS, RADIUS, ETC
    ======================================== */
-
-.radius-20 {
-    border-radius: clamp(14px, 1.39vw, 22px) /*20px @ 1440*/;
-}
 
 
 /* ========================================
    BUTTONS
    ======================================== */
 
-button,
-a.button {
-    cursor: pointer;
-}
-.button-text {
-    text-align: left;
-}
