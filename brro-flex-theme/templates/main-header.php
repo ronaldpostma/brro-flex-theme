@@ -9,4 +9,5 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-// Project-specific main header markup goes here.
+// Project-specific header + navigation markup goes here.
+// WP menus, ACF link fields, overlay popup, etc. — decided per project (see 00-project-setup.mdc).

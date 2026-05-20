@@ -37,11 +37,7 @@ function brro_flex_theme_setup() {
         'flex-width'  => true,
     ] );
 
-    // Menu locations (add/remove per project)
-    register_nav_menus( [
-        'primary' => __( 'Primary Menu', 'brro-flex-theme' ),
-        'footer'  => __( 'Footer Menu', 'brro-flex-theme' ),
-    ] );
+    // Navigation: no default. Add register_nav_menus() only when this project uses WordPress menus (see 00-project-setup.mdc).
 }
 
 /**
@@ -68,8 +64,8 @@ function brro_flex_theme_enqueue_assets() {
         filemtime( get_template_directory() . $main_style )
     );
 
-    // Page-specific CSS goes here (conditional on is_page() / is_page_template()).
-    // Always declare 'brro-style' as a dependency so overrides cascade correctly.
+    // Project CSS belongs in style.css (section banners) — not extra stylesheets by default.
+    // Page-specific JS only when needed (conditional enqueue, same filemtime pattern).
 
     // Main JavaScript (jQuery is provided by brro-core, declare as dep only)
     $main_script = '/assets/js/main.js';
@@ -81,7 +77,15 @@ function brro_flex_theme_enqueue_assets() {
         true
     );
 
-    // Page-specific JS goes here (same conditional pattern as page-specific CSS).
+    // Swiper v11 — site-wide JS + shared init (see .cursor/rules/09-swiper.mdc).
+    wp_enqueue_script(
+        'brro-swiper',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        [],
+        '11',
+        true
+    );
+    wp_add_inline_script( 'brro-swiper', brro_get_swiper_init_script(), 'after' );
 }
 
 /**
@@ -97,11 +101,16 @@ remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 remove_action( 'wp_head', 'wp_oembed_add_host_js' );
 
 /**
- * Theme function files
+ * Theme function files — one require per inc/ file; add new files as the project grows.
+ *
+ * global-functions.php = small shared helpers only.
+ * Other inc/ files = one feature or integration each (see comments in each file).
  */
 require_once get_template_directory() . '/inc/global-functions.php';
+require_once get_template_directory() . '/inc/swiper-init.php';
 require_once get_template_directory() . '/inc/search-functions.php';
 require_once get_template_directory() . '/inc/homepage-functions.php';
+// Add more require_once lines here when you create new inc/ files for the project.
 
 /**
  * Admin-only functionality

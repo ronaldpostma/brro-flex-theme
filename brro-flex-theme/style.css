@@ -6,29 +6,38 @@ Version: 1.2.0
 Text Domain: brro-flex-theme
 */
 
+/*
+ * CSS lives in this file only (framework default).
+ * Use section banners below — same pattern as on real projects (see brro-flex-theme/style.css).
+ * Add rules under SITE WIDE, FRONT PAGE ONLY, or template-specific blocks; keep related rules together.
+ * Do not create assets/css/{page}.css unless the developer explicitly asks for split stylesheets.
+ */
+
 /* ========================================
    GLOBAL STYLES
    ======================================== */
 
-/* CSS Custom Properties (CSS Variables) */
+/* CSS Custom Properties (CSS Variables) — map project colors/fonts here (see 03-css-variables.mdc). */
 :root {
-    --content-max-desk: 1600px;
-    --content-max-tab: 1023px;
-    --content-max-mob: 767px;
+    --content-max-desk: min(100vw,1600px);
+    --content-max-tab: min(100vw,1023px);
+    --content-max-mob: min(100vw,767px);
     --gutter-desktop: 0px;
     --gutter-tablet: 0px;
     --gutter-mobile: 0px;
     --def-mob: clamp(309px, calc(28.26vw + 218.28px), 435px) /*320px @ 360 : 435px @ 767*/;
     --small-mob: clamp(290px, calc(19.66vw + 209.24px), 360px);
     --wide-mob: clamp(300px, calc(63.88vw + 90.02px), 580px);
-    --pink : #FFAEEF;
-    --blue: #1936EF;
+    /* Placeholder brand colors — replace per project. */
+    --pink: #ffaeef;
+    --blue: #1936ef;
     --black: #1d1d1b;
 }
 
 /* ========================================
    CUSTOM ANIMATIONS
    ======================================== */
+
 
 /* ========================================
    WORDPRESS ADMIN BAR
@@ -44,11 +53,23 @@ body:not(.webadmin) #wpadminbar li:not(#wp-admin-bar-site-name, #wp-admin-bar-my
    ======================================== */
 
 /* Prevent horizontal scrolling */
-html {
+html,
+body {
     overflow-x: hidden !important;
     margin: 0 !important;
 }
 
+/* ========================================
+   TEXT & LINK STYLES
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+a:not(.underline) {
+    text-decoration: none;
+}
 
 /* ========================================
    FORM ELEMENTS
@@ -63,64 +84,40 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 /* ========================================
-   COLOR UTILITY CLASSES
-   ======================================== */
-.pink {
-    color: var(--pink);
-}
-.pink-hover:hover {
-    color: var(--pink);
-}
-.pink-bg {
-    background-color: var(--pink);
-}
-.pink-bg-hover:hover {
-    background-color: var(--pink);
-}
-.blue-hover:hover {
-    color: var(--blue);
-}
-.blue-bg {
-    background-color: var(--blue);
-}
-.blue-bg-hover:hover {
-    background-color: var(--blue);
-}
-.blue {
-    color: var(--blue);
-}
-.black-hover:hover {
-    color: var(--black);
-}
-.black-bg {
-    background-color: var(--black);
-}
-.black-bg-hover:hover {
-    background-color: var(--black);
-}
-.black {
-    color: var(--black);
-}
-.transparent {
-    color: transparent;
-}
-
-/* ========================================
    FONT STYLES
    ======================================== */
+/* Map Figma text styles or font-family utilities here (see 04-typography.mdc). */
+
 
 /* ========================================
-   (STICKY) HEADER 
+   COLOR UTILITY CLASSES
    ======================================== */
+/* Two lines per color — combine selectors when the declaration is the same (see 03-css-variables.mdc). */
+
+.pink, .pink-hover:hover { color: var(--pink); }
+.pink-bg, .pink-bg-hover:hover { background-color: var(--pink); }
+.blue, .blue-hover:hover { color: var(--blue); }
+.blue-bg, .blue-bg-hover:hover { background-color: var(--blue); }
+.black, .black-hover:hover { color: var(--black); }
+.black-bg, .black-bg-hover:hover { background-color: var(--black); }
+.transparent { color: transparent; }
+
+/* ========================================
+   (STICKY) HEADER
+   ======================================== */
+/* Sticky behaviour: brro-fx on <header class="brro-fx--header"> — see brro-fx Skill. */
+
+
+/* ========================================
+   NAV POPUP STYLES
+   ======================================== */
+/* Optional full-screen overlay (e.g. menu). Pattern: @06-templates.mdc — Full-screen popups.
+ * Shell: #nav-popup (or project id) in header.php; markup in template-parts/; toggle in assets/js/main.js.
+ */
 
 
 /* ========================================
    FOOTER STYLES
-   ======================================== */
-
-
-/* ========================================
-   TEXT & LINK STYLES
    ======================================== */
 
 
@@ -132,4 +129,97 @@ input[type="search"]::-webkit-search-results-decoration {
 /* ========================================
    BUTTONS
    ======================================== */
+
+
+/* ========================================
+   SWIPER SLIDER GLOBAL STYLES
+   ======================================== */
+
+/* Base Swiper layout — per-slider design uses .brro-swiper--modifier or #id below this block. */
+.swiper {
+    position: relative;
+    overflow: hidden;
+}
+.swiper-wrapper {
+    display: flex;
+    box-sizing: content-box;
+}
+.swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Optional UI — tune colors per project (:root variables). */
+.swiper-pagination {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    pointer-events: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--black);
+    opacity: 0.35;
+    cursor: pointer;
+    transition: opacity 200ms var(--cubix, ease);
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: var(--blue);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    transform: translateY(-50%);
+    cursor: pointer;
+    pointer-events: auto;
+}
+.swiper-button-prev {
+    left: 0;
+}
+.swiper-button-next {
+    right: 0;
+}
+
+/* ========================================
+   SITE WIDE SECTIONS AND COMPONENTS
+   ======================================== */
+/* Reusable blocks used on more than one template (cards, page-title-section, reviews, etc.). */
+
+
+/* ========================================
+   FRONT PAGE ONLY
+   ======================================== */
+/* Scope with body.home, #hero, or .home — not a separate CSS file. */
+
+
+/* ========================================
+   DEFAULT PAGE TEMPLATE
+   ======================================== */
+/* Scope with body.page, .page-template-default, or section ids on page.php. */
+
+
+/* ========================================
+   SINGLE POST TYPE TEMPLATE
+   ======================================== */
+/* e.g. body.single-{post_type} — add when a plugin or CPT needs its own single layout. */
+
+
+/* ========================================
+   ARCHIVE POST TYPE TEMPLATE
+   ======================================== */
+/* e.g. body.post-type-archive-{post_type} */
 

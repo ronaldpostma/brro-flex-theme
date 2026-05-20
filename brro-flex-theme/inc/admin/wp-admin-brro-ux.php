@@ -43,7 +43,7 @@ function brro_admin_inline_scripts() {
     <script>
     jQuery(function($) {
         'use strict';
-        console.log('Brro Flex Theme Admin loaded.');
+        return;
     });
     </script>
     <?php
@@ -81,23 +81,6 @@ function brro_get_admin_css_for_editors() {
     #toplevel_page_brro-separator-content .wp-menu-name:after {
         content: "Inhoud" !important;
     }
-
-    /* ========================================
-       POST EDITOR CUSTOMIZATION
-       ======================================== */
-
-    /* Disable drag functionality for postboxes and widgets */
-    /**/
-    #screen-meta-links,
-    .handle-actions {
-        display: none!important;
-    }
-    .js .postbox .hndle, 
-    .js .widget .widget-top {
-        cursor: default !important;
-        pointer-events: none !important;
-    }
-    /**/
 
     /* ========================================
        CONTENT LISTING CUSTOMIZATION

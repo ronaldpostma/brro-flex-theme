@@ -17,31 +17,15 @@
 <?php wp_body_open(); ?>
 <div id="page-top"></div>
 <?php
-// Conditional header loading.
-$main_header_path      = get_template_directory() . '/templates/main-header.php';
-$secondary_header_path = get_template_directory() . '/templates/secondary-header.php';
-$header_class          = '';
-
-if ( file_exists( $main_header_path ) && is_front_page() ) {
-    $header_class = ' main-header';
-    $header_file  = $main_header_path;
-} elseif ( file_exists( $secondary_header_path ) && is_page( 'confirmed-slug' ) ) { // Replace 'confirmed-slug' per project (see 00-project-setup.mdc).
-    $header_class = ' secondary-header';
-    $header_file  = $secondary_header_path;
-} else {
-    $header_file = '';
-}
+// Header markup from templates/main-header.php when present (navigation is project-specific — see 00-project-setup.mdc).
+$main_header_path = get_template_directory() . '/templates/main-header.php';
+$header_class     = file_exists( $main_header_path ) ? 'brro-fx--header flex row-wrap items-center' : 'brro-fx--header';
+$header_file      = file_exists( $main_header_path ) ? $main_header_path : '';
 ?>
-<header class="brro-fx--header<?php echo esc_attr( $header_class ); ?>">
+<header class="<?php echo esc_attr( $header_class ); ?>">
     <?php
     if ( ! empty( $header_file ) ) {
         include $header_file;
-    } else {
-        // Fallback navigation when no header template matched.
-        wp_nav_menu( [
-            'theme_location' => 'primary',
-            'container'      => false,
-        ] );
     }
     ?>
 </header>
