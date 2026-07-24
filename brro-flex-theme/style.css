@@ -20,7 +20,7 @@ Text Domain: brro-flex-theme
 /* CSS Custom Properties (CSS Variables) — map project colors/fonts here (see 03-css-variables.mdc). */
 :root {
     --content-max-desk: min(100vw,1600px);
-    --content-max-tab: min(100vw,1023px);
+    --content-max-tab: min(100vw,1179px);
     --content-max-mob: min(100vw,767px);
     --gutter-desktop: 0px;
     --gutter-tablet: 0px;

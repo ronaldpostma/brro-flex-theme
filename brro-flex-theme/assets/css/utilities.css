@@ -37,8 +37,8 @@ img {
    RESPONSIVE DISPLAY UTILITIES
    ======================================== */
 
-/* Desktop only (1024px and up) */
-@media (min-width: 1024px) {
+/* Desktop only (1180px and up) */
+@media (min-width: 1180px) {
    .only.desk {
        display: revert !important;
    }
@@ -48,8 +48,8 @@ img {
    }
 }
 
-/* Tablet only (768px to 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* Tablet only (768px to 1179px) */
+@media (min-width: 768px) and (max-width: 1179px) {
    .only.tab {
        display: revert !important;
    }
@@ -104,7 +104,7 @@ img {
    padding-right: var(--gutter-desktop);
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1179px) {
    .inner-flex-wrapper {
       max-width: var(--content-max-tab);
       padding-left: var(--gutter-tablet);
@@ -251,7 +251,7 @@ img {
    ======================================== */
 
 
-@media (max-width: 1023px) {
+@media (max-width: 1179px) {
     .tab\:flex { display: flex !important; gap: 0 !important; }
     .tab\:flex-inline { display: inline-flex !important; gap: 0 !important; }
     .tab\:col-nowrap { flex-flow: column nowrap !important; }
