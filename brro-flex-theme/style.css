@@ -106,6 +106,14 @@ input[type="search"]::-webkit-search-results-decoration {
    (STICKY) HEADER
    ======================================== */
 /* Sticky behaviour: brro-fx on <header class="brro-fx--header"> — see brro-fx Skill. */
+/* Fixed chrome shell — set height, padding, and colors per project. */
+header.brro-fx--header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    /* height: 80px; — REQUIRED: set per project (px or clamp) */
+}
 
 
 /* ========================================

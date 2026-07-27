@@ -7,6 +7,10 @@
  /* ========================================
    General utilities
    ======================================== */
+/* Box sizing */
+* {
+   box-sizing: border-box;
+}
 
 /* Images */
 img {
@@ -93,7 +97,10 @@ img {
    overflow: hidden;
 }
 
-.outer-flex-wrapper { width: 100%; } /* full-bleed background */
+.outer-flex-wrapper {
+   width: 100%; /* full-bleed background */
+   position: relative;
+}
 
 .inner-flex-wrapper {
    box-sizing: border-box;
@@ -102,6 +109,7 @@ img {
    margin-inline: auto;
    padding-left: var(--gutter-desktop);
    padding-right: var(--gutter-desktop);
+   position: relative;
 }
 
 @media (max-width: 1179px) {
