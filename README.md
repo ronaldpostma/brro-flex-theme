@@ -25,4 +25,4 @@ The theme includes a `flexbox-utilities.css` file with a variety of classes to h
 
 ## License
 
-This theme is open-source and available for use under the [GNU GPL V2 License](LICENSE).
+This theme is licensed under [GPLv2 or later](https://github.com/ronaldpostma/brro-flex-theme/blob/main/LICENSE).
