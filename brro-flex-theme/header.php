@@ -17,7 +17,7 @@
 <?php wp_body_open(); ?>
 <div id="page-top"></div>
 <?php
-// Header markup from templates/main-header.php when present (navigation is project-specific — see 00-project-setup.mdc).
+// Header markup from templates/main-header.php when present (navigation is project-specific — see .claude/rules/00-project-setup.md).
 $main_header_path = get_template_directory() . '/templates/main-header.php';
 $header_class     = file_exists( $main_header_path ) ? 'brro-fx--header flex row-wrap items-center' : 'brro-fx--header';
 $header_file      = file_exists( $main_header_path ) ? $main_header_path : '';

@@ -10,4 +10,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Project-specific header + navigation markup goes here.
-// WP menus, ACF link fields, overlay popup, etc. — decided per project (see 00-project-setup.mdc).
+// WP menus, ACF link fields, overlay popup, etc. — decided per project (see .claude/rules/00-project-setup.md).

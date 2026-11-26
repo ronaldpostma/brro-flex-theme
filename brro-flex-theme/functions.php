@@ -37,7 +37,7 @@ function brro_flex_theme_setup() {
         'flex-width'  => true,
     ] );
 
-    // Navigation: no default. Add register_nav_menus() only when this project uses WordPress menus (see 00-project-setup.mdc).
+    // Navigation: no default. Add register_nav_menus() only when this project uses WordPress menus (see .claude/rules/00-project-setup.md).
 }
 
 /**
@@ -77,7 +77,7 @@ function brro_flex_theme_enqueue_assets() {
         true
     );
 
-    // Swiper v11 — site-wide JS + shared init (see .cursor/rules/09-swiper.mdc).
+    // Swiper v11 — site-wide JS + shared init (see .claude/rules/09-swiper.md).
     wp_enqueue_script(
         'brro-swiper',
         'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',

@@ -5,6 +5,8 @@ brro-flex-theme-*.zip
 # Cursor folder
 .cursor
 .cursor/*
+.claude
+.claude/*
 
 #ref folder
 ref

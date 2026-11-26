@@ -8,7 +8,14 @@
 get_header();
 ?>
 <div class="brro-flex-page">
-    <h1 id="page-title" class="offscreen"><?php echo esc_html( get_the_title() ); ?></h1>
+    <?php
+    // Posts page title; the site name when the blog itself is the front page.
+    $brro_home_title = is_front_page() ? '' : single_post_title( '', false );
+    if ( empty( $brro_home_title ) ) {
+        $brro_home_title = get_bloginfo( 'name' );
+    }
+    ?>
+    <h1 id="page-title" class="offscreen"><?php echo esc_html( $brro_home_title ); ?></h1>
 
     <div class="outer-flex-wrapper">
         <div class="inner-flex-wrapper">

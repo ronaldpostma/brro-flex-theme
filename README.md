@@ -20,7 +20,7 @@ The primary purpose of the Brro Flex Theme is to provide a clean and efficient f
 
 ## Flexbox Utility Classes
 
-The theme includes a `flexbox-utilities.css` file with a variety of classes to help you implement responsive designs quickly. Here are some examples:
+The theme includes `assets/css/utilities.css` with flex, alignment, visibility and responsive `tab:` / `mob:` classes to help you implement responsive designs quickly.
 
 
 ## License

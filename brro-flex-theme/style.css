@@ -19,7 +19,7 @@ License URI: https://github.com/ronaldpostma/brro-flex-theme/blob/main/LICENSE
    GLOBAL STYLES
    ======================================== */
 
-/* CSS Custom Properties (CSS Variables) — map project colors/fonts here (see 03-css-variables.mdc). */
+/* CSS Custom Properties (CSS Variables) — map project colors/fonts here (see .claude/rules/03-css-variables.md). */
 :root {
     --content-max-desk: min(100vw,1600px);
     --content-max-tab: min(100vw,1179px);
@@ -88,13 +88,13 @@ input[type="search"]::-webkit-search-results-decoration {
 /* ========================================
    FONT STYLES
    ======================================== */
-/* Map Figma text styles or font-family utilities here (see 04-typography.mdc). */
+/* Map Figma text styles or font-family utilities here (see .claude/rules/04-typography.md). */
 
 
 /* ========================================
    COLOR UTILITY CLASSES
    ======================================== */
-/* Two lines per color — combine selectors when the declaration is the same (see 03-css-variables.mdc). */
+/* Two lines per color — combine selectors when the declaration is the same (see .claude/rules/03-css-variables.md). */
 
 .pink, .pink-hover:hover { color: var(--pink); }
 .pink-bg, .pink-bg-hover:hover { background-color: var(--pink); }
@@ -121,7 +121,7 @@ header.brro-fx--header {
 /* ========================================
    NAV POPUP STYLES
    ======================================== */
-/* Optional full-screen overlay (e.g. menu). Pattern: @06-templates.mdc — Full-screen popups.
+/* Optional full-screen overlay (e.g. menu). Pattern: .claude/rules/06-templates.md — Full-screen popups.
  * Shell: #nav-popup (or project id) in header.php; markup in template-parts/; toggle in assets/js/main.js.
  */
 

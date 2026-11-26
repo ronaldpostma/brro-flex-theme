@@ -18,12 +18,8 @@ if (!defined('ABSPATH')) {
 add_action('admin_head', 'brro_admin_inline_styles');   
 function brro_admin_inline_styles() {
 	echo brro_get_admin_css_for_all_users();
-	$user = get_current_user_id();
-	$get_editors = get_option('brro_editors', '2,3,4,5');
-	$editors = array_filter(array_map('intval', explode(',', $get_editors)), function($id) {
-		return $id > 0;
-	}); 
-	if (in_array($user, $editors)) {
+	// Brro editors = users with the editor role (helper from brro-core)
+	if (function_exists('brro_is_brro_editor') && brro_is_brro_editor(get_current_user_id())) {
 		echo brro_get_admin_css_for_editors();
 	}
 }
